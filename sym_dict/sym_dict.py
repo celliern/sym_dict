@@ -32,6 +32,7 @@ class SymDict(collections.MutableMapping):
         for key in conflict_keys:
             logging.info('key %s in conflict, delete and recompute' % key)
             del self.deduced[key]
+            self.manage_conflict(key, queue)
             queue.put(key)
 
     def get_deduced(self, key, queue):
