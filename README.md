@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/celliern/sym_dict.svg?branch=master)](https://travis-ci.org/celliern/sym_dict)
+[![Coverage Status](https://coveralls.io/repos/github/celliern/sym_dict/badge.svg?branch=master)](https://coveralls.io/github/celliern/sym_dict?branch=master)
 
 # Symbolic powered dictionary
 
