@@ -40,6 +40,13 @@ def test_missing(filled_sdict):
     assert filled_sdict['c'] == 2.5 / 8
     assert filled_sdict['c'] == 5 / 2 / 8
 
+    with pytest.raises(KeyError):
+        filled_sdict['d']
+
+
+def test_repr(filled_sdict):
+    assert filled_sdict.__repr__() == dict(filled_sdict).__repr__()
+
 
 def test_stored(filled_sdict):
     assert 'a' in filled_sdict.store
@@ -64,12 +71,26 @@ def test_redefinition_key_deduced(filled_sdict):
     assert filled_sdict['a'] == 5
 
 
+def test_redefinition_key_deduced_safe(filled_sdict):
+    filled_sdict.safe = True
+    with pytest.raises(KeyError):
+        filled_sdict['b'] = 10
+
+
 def test_redefinition_key_deduced_force(filled_sdict):
     del filled_sdict['a']
     filled_sdict['b'] = 10
     assert filled_sdict['b'] == 10
     assert filled_sdict['c'] == 10 / 8
     assert filled_sdict['a'] == 10 * 2
+
+
+def test_len_filled_sym_dict(filled_sdict):
+    assert len(filled_sdict) == 3
+
+
+def test_len_empty_dict(sdict):
+    assert len(sdict) == 0
 
 
 def test_copy(filled_sdict):

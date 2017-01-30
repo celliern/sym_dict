@@ -71,10 +71,6 @@ class SymDict(collections.MutableMapping):
                 self.deduced[deduced_key]['from'] = linked_keys
                 self.deduced[deduced_key]['value'] = value
 
-    def __missing__(self, key):
-        deduced_value = self.deduced[key]
-        return deduced_value
-
     def add_relation(self, relation):
         relation = sp.S(relation)
         magic_relation = MagicRelation(rel=relation,
@@ -91,10 +87,10 @@ class SymDict(collections.MutableMapping):
         del self.store[key]
 
     def __len__(self):
-        return len(self.store)
+        return len(self.chain_dict)
 
     def __repr__(self):
-        return self.chain_dict.__repr__()
+        return dict(self.chain_dict).__repr__()
 
     def __copy__(self):
         copy = SymDict()

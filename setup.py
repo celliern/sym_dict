@@ -23,6 +23,9 @@ setup(
     # Active la prise en compte du fichier MANIFEST.in
     include_package_data=True,
 
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest', 'pytest-cov'],
+
     # Une url qui pointe vers la page officielle de votre lib
     url='http://github.com/celliern/sym_dict',
 
