@@ -13,7 +13,7 @@ logging = logging.getLogger(__name__)
 MagicRelation = collections.namedtuple('MagicRelation', ('atoms', 'rel'))
 
 
-class magical_dict(collections.MutableMapping):
+class SymDict(collections.MutableMapping):
 
     def __init__(self, *args, **kwargs):
         self.magic_relations = []
@@ -96,7 +96,7 @@ class magical_dict(collections.MutableMapping):
         return self.chain_dict.__repr__()
 
     def __copy__(self):
-        copy = magical_dict()
+        copy = SymDict()
         copy.magic_relations = deepcopy(self.magic_relations)
         copy.store = deepcopy(self.store)
         copy.deduced = deepcopy(self.deduced)
