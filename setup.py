@@ -6,7 +6,7 @@ from setuptools import find_packages, setup
 setup(
     name='sym_dict',
     # la version du code
-    version="0.1.0",
+    version="0.2",
     # Liste les packages à insérer dans la distribution
     packages=find_packages(),
 

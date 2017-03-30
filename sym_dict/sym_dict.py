@@ -2,10 +2,11 @@
 # coding=utf8
 
 import collections
-import sympy as sp
-from queue import Queue
 import logging
 from copy import deepcopy
+
+import sympy as sp
+from queue import Queue
 
 logging.getLogger(__name__).addHandler(logging.NullHandler())
 logging = logging.getLogger(__name__)
