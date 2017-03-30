@@ -27,7 +27,8 @@ setup(
     tests_require=['pytest', 'pytest-cov'],
 
     # Une url qui pointe vers la page officielle de votre lib
-    url='http://github.com/celliern/sym_dict',
+    url='https://github.com/celliern/sym_dict',
+    download_url='https://github.com/celliern/sym_dict/archive/0.2.2.tar.gz',
 
     # Il est d'usage de mettre quelques metadata à propos de sa lib
     # https://pypi.python.org/pypi?%3Aaction=list_classifiers.
